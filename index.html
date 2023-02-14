@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <meta name="description" content="Jonathan Spircoff is a talented freelance web developer specializing in building custom, responsive websites. View his portfolio to see his work.">
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <title>Portfolio</title>
     <script type="text/javascript">
         (function() {
             // https://dashboard.emailjs.com/admin/account
@@ -15,144 +17,170 @@
         })();
     </script>
     <script type="text/javascript">
-       window.onload = function() {
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        // generate a five digit number for the contact_number variable
-    
-        // these IDs from the previous steps
-        emailjs.sendForm('service_n40p3hh', 'template_8jh0ld7', document.getElementById('contact-form'))
-            .then(function() {
-                console.log('SUCCESS!');
-            }, function(error) {
-                console.log('FAILED...', error);
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+             
+                // these IDs from the previous steps
+                emailjs.sendForm('service_n40p3hh', 'template_8jh0ld7', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        document.getElementById('successMessage').style.display = "block"
+                        document.getElementById('contact-form').reset();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+                
             });
-    });
-}
-
+        }
     </script>
+    <title>Jonathan Spircoff | Freelance Web Developer Portfolio</title>
     
 </head>
 <body>
-    <main class="home" style="z-index: 2; background-color: transparent;">
-    <nav>
-        <h1 class="header">Jonathan Spircoff</h1>
-        <ul class="navlinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#" onclick="document.getElementById('contact-page').scrollIntoView();">Contact</a></li>
-
-        </ul>
-    </nav>
-    <div id="projects">    <div class="wrapper">
-        <svg class="svg" style="position: absolute;
-        width: 474px;
-        top: 20vh;
-        left: 10vw;" viewBox="0 0 900 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z" fill="#D9D9D9"/>
-            <mask id="mask0_0_1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="10">
-            <path d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z" fill="#D9D9D9"/>
-            </mask>
-            <g mask="url(#mask0_0_1)">
-            <rect class="mask" y="-49" height="99" fill="black"/>
-            </g>
-            </svg>
-        <div class="container scrollx">
-           
-            <section id="home" class="sec1 pin">
-                <span class="anim">Hey there!</span>
-                <div class="col">
-                    <p>My name is Jonathan Spircoff. I am a technology enthusiast with a passion for constantly learning and exploring new technologies.</p>
-                    <p>I am constantly striving to expand my knowledge and skillset, and I am excited to bring my passion and expertise to new projects and opportunities.
-                    </p> 
-                </div>
-            </section>
-            <section id="aboutme" class="sec2 pin">
-                <span class="anim">About me</span>
-                <div class="col anim">
-                    <p>As a full stack JavaScript developer, I have a passion for creating user-friendly and immersive experiences through the use of technologies such as AI, Three.js, GSAP, and Python. </p>
-                    <p>My goal is to continuously grow my knowledge and expertise in these areas to deliver outstanding results for my clients. I approach each project with confidence, humility, and a strong work ethic, always striving for excellence in everything I do.</p>
-                </div>
-            </section>
-            <section class="sec3 pin">
-                <span class="anim">Projects</span>
-                <div class="col anim">
-                    <div class="flex-container">
-                        <div class="flex-item">
-                          <img src="image1.jpg" alt="Image 1">
-                        </div>
-                        <div class="flex-item">
-                          <img src="image2.jpg" alt="Image 2">
-                        </div>
-                        <div class="flex-item">
-                          <img src="image3.jpg" alt="Image 3">
-                        </div>
-                        <div class="flex-item">
-                          <img src="image4.jpg" alt="Image 4">
-                        </div>
-                      </div>
-                      
-                </div>
-            </section>
-            <section class="sec4 pin">
-                <span class="anim">Lets connect!</span>
-
-                <div class="col anim">
-                    <p>Ready to take the next step and connect with me? Fill out the contact form below to get in touch.</p>
-                </div>
-            </section>
-        </div>
-        <div class="page2">
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" required></textarea>
-                <input type="submit" value="Submit">
-              </form>
-              
-              
-              
-            <div class="footer">
-        <h3>Connect with me on social media</h3>
-        <ul>
-            <div class="social">
-                <img src="./assets/icons8-linkedin-16.png"/>
-                <li><a href="https://www.linkedin.com/in/jonathanspircoff/">LinkedIn</a></li>
+    <!-- <section id="loadingpage">
+        <div id="loading">
+            <img src="./assets/Delight7_artistic_ui_ux_logo_design_peak_black_and_white_clean_4542f5b7-b803-4259-bad2-000e8f00c804-.svg"/>
+            <div>
+                <h2>THE</h2>
+                <h2>SUMMIT</h2>
+            </div> 
+        </div>     
+    </section> -->
+    <section class="page" id="main">
+            <nav>
+                <h1>Jonathan Spircoff</h1>
+            <ul>
+                <li><a href="#main">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
-            <div class="social">
-                <img src="./assets/icons8-github-16.png"/>
-                <li><a href="https://github.com/JonSpircoff7">GitHub</a></li>
+        </nav>
+        <main class="pageflex">
+            <div class="profilepic">
+                <img src="./assets/8a8de1d0-cb99-4f69-b69d-a2033a2f7ca5_9_1675808953115.jpeg (3).jpg"/>
+                <p></p>
             </div>
-            <div class="social">
-                <img src="./assets/icons8-instagram-24.png"/>
-                <li><a href="https://instagram.com/jon.spircoff7">Instagram</a></li>
+            <div class="call">
+                <h2>Reach the Summit Of Digtal Success!</h2>
+                <p>I bring a unique combination of skills, experience, and creativity to the table. Let's rise above the competition together.</p>
+                <div class="buttons">
+                    <button class="btn" href=#portfolio style="scroll-behavior: smooth;">Portfolio</button>
+                    <button class="btn" href="contact" style="scroll-behavior: smooth;">Contact</button>
+                </div>
             </div>
-        </ul>
-    </div>
-        </div>
-    <div id="profilepic">
-        <img src="./assets/thumbnail-removebg-preview.png" alt="Jonathan Spircoff profile picture">     
-    </div>
-    
-    </main>
-        <div id="bkgcontainer">
-        </div>
-    <!-- Intro Page -->
-     <section class="loading">    
-        <span class="welcome">W</span>
-        <span class="welcome">E</span>
-        <span class="welcome">L</span>
-        <span class="welcome">C</span>
-        <span class="welcome">O</span>
-        <span class="welcome">M</span>
-        <span class="welcome">E</span>
-        <span class="welcome">.</span>
-        <span class="welcome">.</span>
-        <span class="welcome">.</span>
+        </main>
     </section>
+    <section class="page portfolio" id="portfolio">
+      <div class="projects">  
+        <div>
+            <a href="https://www.youtube.com/channel/UChGSsnzTrz2Td8EestE-2bw"><img src="./assets/Delight7_clean_and_simple_natural_design_for_natures_lullabies__efd8c547-d907-4d4c-98bd-3ef4a9856c88.png"/></a>
+            <h2>Nature's Lullabies</h2>
+            <p>Welcome to Natures Lullabies, a YouTube channel dedicated to providing a wide variety of soothing music and sounds to help you relax, unwind, and fall asleep. Our channel features a diverse selection of music, including nature sounds, white noise, ambient music, and lullabies, all designed to help you create a peaceful and calming environment for sleep. Whether you're struggling with insomnia, or simply looking for a way to relax after a long day, our channel has something for everyone. </p>
+            <!-- <button class="btn">Explore</button> -->
+       
+        </div>
+        <div>
+            <img src="./assets/Delight7_clean_and_simple_design_for_natures_lullabies_ui_ux_5153701f-a56f-49c3-b897-f3f00647b3ec.png"/>
+            <h2>Project</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est lab</p>
+            <!-- <button class="btn">Explore</button> -->
+        </div>
+        <div>
+            <img src="./assets/Delight7_clean_and_simple_natural_design_for_natures_lullabies__efd8c547-d907-4d4c-98bd-3ef4a9856c88.png"/>
+            <h2>Project</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est lab</p>
+            <!-- <button class="btn">Explore</button> -->
+        </div>
+        <div>
+            <img src="./assets/Delight7_clean_and_simple_design_for_natures_lullabies_ui_ux_5153701f-a56f-49c3-b897-f3f00647b3ec.png"/>
+            <h2>Project</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est lab</p>
+            <!-- <button class="btn">Explore</button> -->
+        </div>
+    </div>
+    </section>
+    <section class="pageflex about" id="about">
+        <div class="grid">
+            <img id="img1" class="small pic1" src="./assets/IMG_2247.JPEG"/>
+            <img id="img2" class="small pic2" src="./assets/IMG_5811(2).jpg"/>
+            <img id="img3" class="medium pic1" src="./assets/jpeg-imag.jpg"/>
+            <img id="img4" class="medium pic2" src="./assets/IMG_6703(1).jpg"/>
+            <img id="img5" class="medium pic3" src="./assets/IMG_6705(1).jpg"/>
+            <img id="img6" class="medium pic4" src="./assets/IMG_6710(1).jpg"/>
+            <img id="img7" class="large pic1" src="./assets/IMG_6707(1).jpg"/>
+            <img id="img8" class="large pic2" src="./assets/IMG_6704.jpg"/>
+        </div>
+        <div style="display:flex; justify-content: center;align-items: center;">
+            <div>
+                <h2>Get To Know Me</h2>
+                <p>Hi, I'm Jonathan Spircoff. I specialize in creating amazing websites that are not only functional but also visually stunning. I use my expertise in animation and special effects to bring unique elements to every project I work on. I'm continuously improving my understanding of new technology and design techniques to stay ahead in the industry. Let's make something great together!</p>
+            </div>
+            <img class="img" src="./assets/Photoleap_08_02_2023_10_00_24_YZMFg.jpg" alt="Jonathan Spircoff candid photo">
+        </div>
+    </section>
+    <section class="pageflex contact" id="contact">
+        <div class="contact-content">
+            <h2>Let's get connected</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="Enter your first name" >
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="lname" placeholder="Enter your last name" >
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: *</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message: *</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <div class="form-group center">
+                    <input class='submit' type="submit" value="Submit">
+                    <div style="text-align: center;" id="successMessage">Your message has been sent successfully!</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+                </div>
+            </form>
+            <div class="icons">
+                <a href="https://www.facebook.com/profile.php?id=100079641553533"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="25" height="25"
+viewBox="0,0,256,256"
+style="fill:#000000;">
+<g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M9,4c-2.74952,0 -5,2.25048 -5,5v32c0,2.74952 2.25048,5 5,5h16.83203c0.10799,0.01785 0.21818,0.01785 0.32617,0h5.67383c0.10799,0.01785 0.21818,0.01785 0.32617,0h8.8418c2.74952,0 5,-2.25048 5,-5v-32c0,-2.74952 -2.25048,-5 -5,-5zM9,6h32c1.66848,0 3,1.33152 3,3v32c0,1.66848 -1.33152,3 -3,3h-8v-14h3.82031l1.40039,-7h-5.2207v-2c0,-0.55749 0.05305,-0.60107 0.24023,-0.72266c0.18718,-0.12159 0.76559,-0.27734 1.75977,-0.27734h3v-5.63086l-0.57031,-0.27149c0,0 -2.29704,-1.09766 -5.42969,-1.09766c-2.25,0 -4.09841,0.89645 -5.28125,2.375c-1.18284,1.47855 -1.71875,3.45833 -1.71875,5.625v2h-3v7h3v14h-16c-1.66848,0 -3,-1.33152 -3,-3v-32c0,-1.66848 1.33152,-3 3,-3zM32,15c2.07906,0 3.38736,0.45846 4,0.70117v2.29883h-1c-1.15082,0 -2.07304,0.0952 -2.84961,0.59961c-0.77656,0.50441 -1.15039,1.46188 -1.15039,2.40039v4h4.7793l-0.59961,3h-4.17969v16h-4v-16h-3v-3h3v-4c0,-1.83333 0.46409,-3.35355 1.28125,-4.375c0.81716,-1.02145 1.96875,-1.625 3.71875,-1.625z"></path></g></g>
+</svg></a>
+<a href="https://github.com/JonSpircoff7"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+    width="32" height="32"
+    viewBox="0,0,256,256"
+    style="fill:#000000;">
+    <g fill="#ffffff" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M16,4c-6.62891,0 -12,5.37109 -12,12c0,5.30078 3.4375,9.80078 8.20703,11.38672c0.60156,0.10938 0.82031,-0.25781 0.82031,-0.57812c0,-0.28516 -0.01172,-1.03906 -0.01562,-2.03906c-3.33984,0.72266 -4.04297,-1.60937 -4.04297,-1.60937c-0.54687,-1.38672 -1.33203,-1.75781 -1.33203,-1.75781c-1.08984,-0.74219 0.08203,-0.72656 0.08203,-0.72656c1.20313,0.08594 1.83594,1.23438 1.83594,1.23438c1.07031,1.83594 2.80859,1.30469 3.49219,1c0.10938,-0.77734 0.42188,-1.30469 0.76172,-1.60547c-2.66406,-0.30078 -5.46484,-1.33203 -5.46484,-5.92969c0,-1.3125 0.46875,-2.38281 1.23438,-3.22266c-0.12109,-0.30078 -0.53516,-1.52344 0.11719,-3.17578c0,0 1.00781,-0.32031 3.30078,1.23047c0.95703,-0.26562 1.98438,-0.39844 3.00391,-0.40234c1.01953,0.00391 2.04688,0.13672 3.00391,0.40234c2.29297,-1.55078 3.29688,-1.23047 3.29688,-1.23047c0.65625,1.65234 0.24609,2.875 0.12109,3.17578c0.76953,0.83984 1.23047,1.91016 1.23047,3.22266c0,4.60938 -2.80469,5.62109 -5.47656,5.92188c0.42969,0.36719 0.8125,1.10156 0.8125,2.21875c0,1.60547 -0.01172,2.89844 -0.01172,3.29297c0,0.32031 0.21484,0.69531 0.82422,0.57813c4.76563,-1.58984 8.19922,-6.08594 8.19922,-11.38672c0,-6.62891 -5.37109,-12 -12,-12z"></path></g></g>
+    </svg></a>
+<a href="https://www.linkedin.com/in/jonathanspircoff/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="25" height="25"
+viewBox="0,0,256,256"
+style="fill:#000000;">
+<g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M9,4c-2.74952,0 -5,2.25048 -5,5v32c0,2.74952 2.25048,5 5,5h32c2.74952,0 5,-2.25048 5,-5v-32c0,-2.74952 -2.25048,-5 -5,-5zM9,6h32c1.66848,0 3,1.33152 3,3v32c0,1.66848 -1.33152,3 -3,3h-32c-1.66848,0 -3,-1.33152 -3,-3v-32c0,-1.66848 1.33152,-3 3,-3zM14,11.01172c-1.09522,0 -2.08078,0.32736 -2.81055,0.94141c-0.72977,0.61405 -1.17773,1.53139 -1.17773,2.51367c0,1.86718 1.61957,3.32281 3.67969,3.4668c0.0013,0.00065 0.0026,0.0013 0.00391,0.00195c0.09817,0.03346 0.20099,0.05126 0.30469,0.05273c2.27301,0 3.98828,-1.5922 3.98828,-3.52148c-0.00018,-0.01759 -0.00083,-0.03518 -0.00195,-0.05274c-0.10175,-1.90023 -1.79589,-3.40234 -3.98633,-3.40234zM14,12.98828c1.39223,0 1.94197,0.62176 2.00195,1.50391c-0.01215,0.85625 -0.54186,1.51953 -2.00195,1.51953c-1.38541,0 -2.01172,-0.70949 -2.01172,-1.54492c0,-0.41771 0.15242,-0.7325 0.47266,-1.00195c0.32023,-0.26945 0.83428,-0.47656 1.53906,-0.47656zM11,19c-0.55226,0.00006 -0.99994,0.44774 -1,1v19c0.00006,0.55226 0.44774,0.99994 1,1h6c0.55226,-0.00006 0.99994,-0.44774 1,-1v-5.86523v-13.13477c-0.00006,-0.55226 -0.44774,-0.99994 -1,-1zM20,19c-0.55226,0.00006 -0.99994,0.44774 -1,1v19c0.00006,0.55226 0.44774,0.99994 1,1h6c0.55226,-0.00006 0.99994,-0.44774 1,-1v-10c0,-0.82967 0.22639,-1.65497 0.625,-2.19531c0.39861,-0.54035 0.90147,-0.86463 1.85742,-0.84766c0.98574,0.01695 1.50758,0.35464 1.90234,0.88477c0.39477,0.53013 0.61523,1.32487 0.61523,2.1582v10c0.00006,0.55226 0.44774,0.99994 1,1h6c0.55226,-0.00006 0.99994,-0.44774 1,-1v-10.73828c0,-2.96154 -0.87721,-5.30739 -2.38086,-6.89453c-1.50365,-1.58714 -3.59497,-2.36719 -5.80664,-2.36719c-2.10202,0 -3.70165,0.70489 -4.8125,1.42383v-0.42383c-0.00006,-0.55226 -0.44774,-0.99994 -1,-1zM12,21h4v12.13477v4.86523h-4zM21,21h4v1.56055c0.00013,0.43 0.27511,0.81179 0.68291,0.94817c0.40781,0.13638 0.85714,-0.00319 1.11591,-0.34661c0,0 1.57037,-2.16211 5.01367,-2.16211c1.75333,0 3.25687,0.58258 4.35547,1.74219c1.0986,1.15961 1.83203,2.94607 1.83203,5.51953v9.73828h-4v-9c0,-1.16667 -0.27953,-2.37289 -1.00977,-3.35352c-0.73023,-0.98062 -1.9584,-1.66341 -3.47266,-1.68945c-1.52204,-0.02703 -2.77006,0.66996 -3.50195,1.66211c-0.73189,0.99215 -1.01562,2.21053 -1.01562,3.38086v9h-4z"></path></g></g>
+</svg></a>
+<a href="https://www.instagram.com/jon.spircoff7/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+    width="25" height="25"
+    viewBox="0,0,256,256"
+    style="fill:#000000;">
+    <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M16,3c-7.16752,0 -13,5.83248 -13,13v18c0,7.16752 5.83248,13 13,13h18c7.16752,0 13,-5.83248 13,-13v-18c0,-7.16752 -5.83248,-13 -13,-13zM16,5h18c6.08648,0 11,4.91352 11,11v18c0,6.08648 -4.91352,11 -11,11h-18c-6.08648,0 -11,-4.91352 -11,-11v-18c0,-6.08648 4.91352,-11 11,-11zM37,11c-1.10457,0 -2,0.89543 -2,2c0,1.10457 0.89543,2 2,2c1.10457,0 2,-0.89543 2,-2c0,-1.10457 -0.89543,-2 -2,-2zM25,14c-6.06329,0 -11,4.93671 -11,11c0,6.06329 4.93671,11 11,11c6.06329,0 11,-4.93671 11,-11c0,-6.06329 -4.93671,-11 -11,-11zM25,16c4.98241,0 9,4.01759 9,9c0,4.98241 -4.01759,9 -9,9c-4.98241,0 -9,-4.01759 -9,-9c0,-4.98241 4.01759,-9 9,-9z"></path></g></g>
+    </svg></a>
+            </div>
+        </div>
+    </section>
+    
+    
     <script src="./index.js"></script>
 </body>
 </html>

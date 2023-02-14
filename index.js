@@ -1,147 +1,71 @@
-// variables
-let tl = gsap.timeline();;
-let welcomeMsg = document.querySelectorAll(".welcome");
+// document.getElementById("loadingpage").style.overflow = "hidden";
 
-// particles
-let particleClass = "particle";
-let particleColors = ["white", "grey"];
-let bkgcontainer = document.getElementById("bkgcontainer");
-let count = 200;
-let w = bkgcontainer.offsetWidth;
-let h = bkgcontainer.offsetHeight;
-let elem;
+// const pages = document.querySelectorAll(".page");
+// const pageFlex = document.querySelectorAll(".pageflex");
 
-// Welcome "loading" message animation
-// Welcome "loading" message animation
-for( let i = 0 ; i < 3 ; i++){
-  welcomeMsg.forEach(element => {
-  tl.to(element, {y: 5, ease: "circ", repeat: 1,duration: .1, yoyo: true}, "-=.1")
-  })}
-  
-  // Remove welcome message 
-  welcomeMsg.forEach(element => {
-  tl.to(element, {x: 400, ease: "power4.in", duration: 1, opacity: 0}, "<.15")
- 
-  });  
+// for (const page of pages) {
+// page.style.display = "none";
+// }
 
-// Home page animation
-tl.to(".home", {xPercent: 100, duration: 1}, "<")
+// for (const pagef of pageFlex) {
+// pagef.style.display = "none";
+// }
 
-// Home page text animation
-tl.fromTo([".header", ".navlinks"], {y: 50, opacity: 0}, {y: 0, opacity: 1, duration: 3})
-.fromTo(["#projects"], {y: 50, opacity: 0}, {y: 0, opacity: 1, duration: 3}, "<.2")
-.fromTo([".footer"], {y: 50, opacity: 0}, {y: 0, opacity: 1, duration: 3}, "<.2")
-.fromTo(["#profilepic"], {y: 50, opacity: 0}, {y: 0, opacity: 1, duration: 3}, "<.2")
+// const loading = document.getElementById("loadingpage");
+// const main = document.querySelector("main");
 
-// particles
-for(let i= 0; i< count; i++){
-    elem = document.createElement('div');
-    elem.className = particleClass;
-    bkgcontainer.appendChild(elem);
-    gsap.set(elem, {
-        x : gsap.utils.random(0 , w),
-        y : gsap.utils.random(0, h) - (h * 1),
-        z : gsap.utils.random(1, 500),
-        duration: gsap.utils.random(1),
-        scale: gsap.utils.random(0.01, 1),
-        opacity: gsap.utils.random(0.01, .75),
-        backgroundColor: gsap.utils.random(particleColors)
-        
-    });
-    anime(elem)
-}
+// const tl = gsap.timeline();
+// tl.fromTo("#loading", { opacity: 0 }, { delay: 1, duration: 2, opacity: 1 })
+// .to("#loading", { yPercent: -100, duration: 1, opacity: 0 });
+// tl.eventCallback("onComplete", function () {
+// loading.style.display = "none";
+// for (const page of pages) {
+// page.style.display = "block";
+// }
+// for (const pagef of pageFlex) {
+// pagef.style.display = "flex";
+// }
+// gsap.fromTo(
+// ["#main", ".portfolio", ".about", ".contact"],
+// { yPercent: 100, opacity: 0 },
+// { opacity: 1, duration: 1, yPercent: 0 }
+// );
+// gsap.fromTo(
+// ["nav h1", "nav ul"],
+// { opacity: 0, y: 10 },
+// { y: 0, delay: 1.5, duration: 2, opacity: 1 }
+// );
+// gsap.fromTo(
+// [".profilepic img", ".call"],
+// { opacity: 0, y: 10 },
+// { y: 0, duration: 2, opacity: 1 },
+// "<.3"
+// );
+// });
 
-function anime(elem){
-    gsap.to(elem, gsap.utils.random( 5, 10), {
-        scale: gsap.utils.random(0,2),
-        z: gsap.utils.random(-1000, 1000),
-        y: gsap.utils.random(-1000, h),
-        x: gsap.utils.random(-1000, w),
-        ease: "linear",
-        repeat: -1
-    })
-   
-}
+// gsap.to(".portfolio", {
+//     scrollTrigger: ".portfolio",
+//     opacity: 0,
+//     duration: 10,
+//     markers: true,
+//     });
+    
+//     gsap.to(".about", {
+//     scrollTrigger: ".about",
+//     opacity: 0,
+//     duration: 10,
+//     markers: true,
+//     });
+    
+//     gsap.to(".contact", {
+//     scrollTrigger: ".contact",
+//     opacity: 0,
+//     duration: 10,
+//     markers: true,
+//     });
 
 
 
-const container = document.querySelector(".container");
-const sections = gsap.utils.toArray(".container section");
-const texts = gsap.utils.toArray(".anim");
-const mask = document.querySelector(".mask");
-
-let scrollBKG = gsap.to("#bkgcontainer", {
-    yPercent: 0 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#bkgcontainer",
-      pin: true,
-      scrub: 1,
-      end: "+=3000",
-      //snap: 1 / (sections.length)
-    }
-  });
-  let scrollHome = gsap.to(".home", {
-    yPercent: 0 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".home",
-      pin: true,
-      scrub: 1,
-      end: "+=3000",
-      //snap: 1 / (sections.length)
-    }
-  });
-  let scrollTween = gsap.fromTo(sections, {
-    xPercent: 0, // <-- updated
-    ease: "none",
-    start: "+=0"
-  }, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: "sections",
-      pin: true,
-      scrub: 1,
-      end: "+=3100",
-      markers: true
-    }
-  });
-
-console.log(1 / (sections.length))
-
-//Progress bar animation
-
-gsap.to(mask, {
-  width: "100%",
-  scrollTrigger: {
-    trigger: "section",
-    start: "top left",
-    end: "+=700%",
-    markers: true,
-    scrub: 1
-  }
-});
-
-// whizz around the sections
-sections.forEach((section) => {
-  // grab the scoped text
-  let text = section.querySelectorAll(".anim");
-  
-  // bump out if there's no items to animate
-  if(text.length === 0)  return 
-  
-  // do a little stagger
-  gsap.from(text, {
-    y: 10,
-    opacity: 0,
-    duration: 5,
-    ease: "elastic",
-    stagger: 0.1,
-    scrollTrigger: {
-      trigger: section,
-      containerAnimation: scrollTween,
-      start: "left center"
-    }
-  });
-});
+// tl.from(loading, {opacity: 0,duration: 3, delay: 1})
+// .to(loading, {yPercent: -100, opacity: 0, duration: 1})
+// .to(main, {yPercent: -100, duration: 2, opacity: 1}, '-=.6')
