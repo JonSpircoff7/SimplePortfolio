@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <title>Home - Brand</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Give+You+Glory&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
     <script type="text/javascript">
         (function() {
             // https://dashboard.emailjs.com/admin/account
@@ -15,836 +15,144 @@
         })();
     </script>
     <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('service_n40p3hh', 'template_8jh0ld7', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
-                    });
+       window.onload = function() {
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+    
+        // these IDs from the previous steps
+        emailjs.sendForm('service_n40p3hh', 'template_8jh0ld7', document.getElementById('contact-form'))
+            .then(function() {
+                console.log('SUCCESS!');
+            }, function(error) {
+                console.log('FAILED...', error);
             });
-        }
+    });
+}
+
     </script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap"
-    />
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css" />
-    <link rel="stylesheet" href="assets/css/aos.min.css" />
-    <link rel="stylesheet" href="assets/css/Contact-form-simple.css" />
-    <link rel="stylesheet" href="assets/css/figloo-carousal-1.css" />
-    <link rel="stylesheet" href="assets/css/figloo-carousal.css" />
-    <link rel="stylesheet" href="assets/css/Responsive-Image-Grid.css" />
-    <link rel="stylesheet" href="assets/css/Toggle-Switch-toggle-switch.css" />
-    <link rel="stylesheet" href="assets/css/Toggle-Switch.css" />
-  </head>
+    
+</head>
+<body>
+    <main class="home" style="z-index: 2; background-color: transparent;">
+    <nav>
+        <h1 class="header">Jonathan Spircoff</h1>
+        <ul class="navlinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#" onclick="document.getElementById('contact-page').scrollIntoView();">Contact</a></li>
 
-  <body
-    id="page-top"
-    data-bs-spy="scroll"
-    data-bs-target="#mainNav"
-    data-bs-offset="77"
-  >
-    <nav
-      class="navbar navbar-light navbar-expand-md fixed-top"
-      id="mainNav"
-      style="background: #00000000; border-style: none"
-    >
-      <div class="container">
-        <a
-          class="navbar-brand"
-          data-aos="fade-right"
-          data-aos-duration="2700"
-          data-aos-offset="400px"
-          data-aos-delay="450"
-          data-aos-once="true"
-          href="#home"
-          >Jonathan Spircoff</a
-        ><button
-          data-bs-toggle="collapse"
-          class="navbar-toggler navbar-toggler-right"
-          data-bs-target="#navbarResponsive"
-          type="button"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          value="Menu"
-        >
-          <i class="fa fa-bars"></i>
-        </button>
-        <div
-          class="collapse navbar-collapse"
-          data-aos="fade-left"
-          data-aos-duration="2700"
-          data-aos-offset="400px"
-          data-aos-delay="450"
-          id="navbarResponsive"
-          style="padding: 0px"
-        >
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item nav-link">
-              <a class="nav-link active" href="#home">Home</a>
-            </li>
-            <li class="nav-item nav-link">
-              <a class="nav-link" href="#about">About me</a>
-            </li>
-            <li class="nav-item nav-link">
-              <a class="nav-link" href="#contactForm">contact</a>
-            </li>
-          </ul>
-          <!-- <label class="switch">
-            <input type="checkbox" />
-            <span class="slider round"></span>
-          </label> -->
-        </div>
-      </div>
-    </nav>
-
-    <header
-      id="home"
-      class="masthead"
-      style="background-image: url('assets/img/intro-bg.jpg')"
-    >
-      <div class="intro-body">
-        <div class="container">
-          <div
-            class="row"
-            data-aos="fade-up"
-            data-aos-duration="2700"
-            data-aos-offset="400px"
-            data-aos-delay="450"
-            data-aos-once="true"
-          >
-            <div class="col-lg-8 mx-auto">
-              <h1 class="brand-heading" style="height: 34px">Welcome</h1>
-              <p class="intro-text"><br />MY JOURNEY INTO WEB DESIGN</p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel slide" data-bs-ride="carousel" id="carousel-2">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <section
-                data-aos="fade-up"
-                data-aos-duration="2700"
-                data-aos-offset="400"
-                data-aos-delay="450"
-                class="card-section-imagia"
-                style="color: white; background: rgba(0, 0, 0, 0)"
-              >
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                      <div class="card-container-imagia">
-                        <div class="card-imagia">
-                          <div class="front-imagia">
-                            <div class="user-imagia"></div>
-                            <div>
-                              <img
-                                src="assets\img\chrome-capture-2023-0-16.png"
-                                style="width: 75%;
-                                object-fit: cover;"
-                              />
-                            </div>
-                            <div class="content-imagia">
-                              <h3 class="name-imagia" style="color: black">
-                                Travel Buddy
-                              </h3>
-                              <p class="subtitle-imagia" style="    line-height: normal">
-                                Travel Buddy provides you with the latest
-                                information about your flight.
-                              </p>
-                            </div>
-                            <div class="footer-imagia">
-                              <span><i class="fa fa-plus"></i> More info</span>
-                            </div>
-                          </div>
-                          <div class="back-imagia">
-                            <div
-                              class="content-imagia content-back-imagia"
-                              style="color: black"
-                            >
-                              <div>
-                                <h3 class="text-center">Travel Buddy</h3>
-                                <p class="text-center" style="overflow: hidden">
-                                  <span
-                                    style="
-                                      background-color: rgba(255, 255, 255, 0);
-                                    "
-                                  >
-                                    We all know how tough it can be to travel in
-                                    today's current state whether it be an
-                                    unexpected storm or not knowing which gate
-                                    to go to. That's why we came up with Travel
-                                    Buddy. An all-in-one application that allows
-                                    you, the traveler, access to all the
-                                    information you need to make it to your
-                                    final destination. We want traveling to be a
-                                    fun experience so come join us at Travel
-                                    Buddy.</span
-                                  ><br /><br />
-                                </p>
-                              </div>
-                            </div>
-                            <div class="footer-imagia">
-                              <div class="social-imagia text-center">
-                                <a href="#"><i class="fa fa-github"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                      <div class="card-container-imagia">
-                        <div class="card-imagia">
-                          <div class="front-imagia">
-                            <div class="user-imagia"></div>
-                            <div>
-                              <img
-                                src="assets\img\image (1).png"
-                                style="width: 75%;
-                                object-fit: cover;"
-                              />
-                            </div>
-                            <div class="content-imagia">
-                              <h3 class="name-imagia" style="color: black">
-                                BuiltRight
-                              </h3>
-                              <p class="subtitle-imagia" style="    line-height: normal">
-                                Provides users with a convenient and user-friendly platform to search for workouts by muscle group and create personalized workout routines. 
-                              </p>
-                            </div>
-                            <div class="footer-imagia">
-                              <span><i class="fa fa-plus"></i> More info</span>
-                            </div>
-                          </div>
-                          <div class="back-imagia">
-                            <div
-                              class="content-imagia content-back-imagia"
-                              style="color: black"
-                            >
-                              <div>
-                                <h3 class="text-center">Travel Buddy</h3>
-                                <p class="text-center" style="line-height:normal;overflow: hidden">
-                                  <span
-                                    style="
-                                      line-height:normal;background-color: rgba(255, 255, 255, 0);
-                                    "
-                                  >
-                                  With BUILTRIGHT, users can easily find exercises targeting specific muscle groups such as arms, chest, back, legs, and abdominals. Once the desired exercises are selected, users can easily create and save their own workout routines, providing them with a tailored fitness plan to achieve their goals. Whether you are a beginner looking to get started with a fitness routine or an experienced athlete looking to mix things up, BUILTRIGHT has something for everyone. Try it out today and take the first step towards a healthier and more active lifestyle.</span
-                                  ><br /><br />
-                                </p>
-                              </div>
-                            </div>
-                            <div class="footer-imagia">
-                              <div class="social-imagia text-center">
-                                <a href="#"><i class="fa fa-github"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                      <div class="card-container-imagia">
-                        <div class="card-imagia">
-                          <div class="front-imagia">
-                            <div class="user-imagia"></div>
-                            <div >
-                              <img
-                                src="assets\img\carproject.png"
-                                style="    width: 50%;
-                                object-fit: cover;"
-                              />
-                            </div>
-                            <div class="content-imagia">
-                              <h3 class="name-imagia" style="color: black">
-                                Car Cleaning Business
-                              </h3>
-                              <p class="subtitle-imagia" style="    line-height: normal">
-                                To be continued...
-                              </p>
-                            </div>
-                            <div class="footer-imagia">
-                              <span><i class="fa fa-plus"></i> More info</span>
-                            </div>
-                          </div>
-                          <div class="back-imagia">
-                            <div
-                              class="content-imagia content-back-imagia"
-                              style="color: black"
-                            >
-                              <div>
-                                <h3 class="text-center">To be continued...</h3>
-                                <p class="text-center" style="overflow: hidden">
-                                  <span
-                                    style="
-                                      background-color: rgba(255, 255, 255, 0);
-                                    "
-                                  >
-                                    This is going to be for a neighbor that has a local dealership car cleaning business.</span
-                                  ><br /><br />
-                                </p>
-                              </div>
-                            </div>
-                            <div class="footer-imagia">
-                              <div class="social-imagia text-center">
-                                <a href="#"><i class="fa fa-github"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-              </section>
-            </div>
-            <div class="carousel-item">
-              <section class="card-section-imagia" style="color: white">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                      <div class="card-container-imagia">
-                        <div class="card-imagia">
-                          <div class="front-imagia">
-                            <div class="user-imagia"></div>
-                            <div>
-                              <div class="sketchfab-embed-wrapper"> <iframe title="Cloudy Mountain" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/f61d84c6534d4007accdeac35f433119/embed?camera=0&ui_hint=0"> </iframe> </div>
-                            </div>
-                            <div class="content-imagia">
-                              <h3 class="name-imagia" style="color: black">
-                                ThreeJS
-                              </h3>
-                              <p class="subtitle-imagia" style="    line-height: normal">
-                                This will be my 3D interactive website portfolio
-                              </p>
-                            </div>
-                            <div class="footer-imagia">
-                              <span><i class="fa fa-plus"></i> More info</span>
-                            </div>
-                          </div>
-                          <div class="back-imagia">
-                            <div
-                              class="content-imagia content-back-imagia"
-                              style="color: black"
-                            >
-                              <div>
-                                <h3 class="text-center">ThreeJS</h3>
-                                <p class="text-center" style="overflow: hidden">
-                                  <span
-                                    style="
-                                      background-color: rgba(255, 255, 255, 0);
-                                    "
-                                  >
-                                  As a web developer, I possess a strong passion for utilizing Three.js to create immersive and interactive experiences. The ability to bring 3D models and animations to life on the web, through the utilization of this technology, is truly captivating to me. I am highly motivated by the creative possibilities that Three.js offers, and am dedicated to leveraging this technology to engage users in unique and innovative ways. </span
-                                  ><br /><br />
-                                </p>
-                              </div>
-                            </div>
-                            <div class="footer-imagia">
-                              <div class="social-imagia text-center">
-                                <a href="#"><i class="fa fa-github"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                      <div class="card-container-imagia">
-                        <div class="card-imagia">
-                          <div class="front-imagia">
-                            <div class="user-imagia"></div>
-                            <div>
-                              <img
-                                src="assets\img\jonnyboixq_man_detailed_futuristic_icon_images_characters_futur_37e2e14c-b4a5-4c83-9619-5aed8f8089ed.png"
-                                style="width: 50%;
-                                object-fit: cover;"
-                              />
-                            </div>
-                            <div class="content-imagia">
-                              <h3 class="name-imagia" style="color: black">
-                                Explore AI
-                              </h3>
-                              <p class="subtitle-imagia" style="    line-height: normal">
-                                Bring AI experiences to web development
-                              </p>
-                            </div>
-                            <div class="footer-imagia">
-                              <span><i class="fa fa-plus"></i> More info</span>
-                            </div>
-                          </div>
-                          <div class="back-imagia">
-                            <div
-                              class="content-imagia content-back-imagia"
-                              style="color: black"
-                            >
-                              <div>
-                                <h3 class="text-center">Explore AI</h3>
-                                <p class="text-center" style="overflow: hidden">
-                                  <span
-                                    style="
-                                      background-color: rgba(255, 255, 255, 0);
-                                    "
-                                  >
-                                  Pioneering the integration of machine learning to create innovative, next-generation capabilities in Web Development"</span
-                                  ><br /><br />
-                                </p>
-                              </div>
-                            </div>
-                            <div class="footer-imagia">
-                              <div class="social-imagia text-center">
-                                <a href="#"><i class="fa fa-github"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                      <div class="card-container-imagia">
-                        <div class="card-imagia">
-                          <div class="front-imagia">
-                            <div class="user-imagia"></div>
-                            <div>
-                              <img
-                                src="assets\img\Delight7_professional_construction_website_with_beautiful_farm__2ca2b5ae-db74-481f-88f6-4703a2bbbbd4.png"
-                                style="width: 50%;
-                                object-fit: cover;"
-                              />
-                            </div>
-                            <div class="content-imagia">
-                              <h3 class="name-imagia" style="color: black">
-                                Travel Buddy
-                              </h3>
-                              <p class="subtitle-imagia" style="    line-height: normal">
-                                Travel Buddy provides you with the latest
-                                information about your flight.
-                              </p>
-                            </div>
-                            <div class="footer-imagia">
-                              <span><i class="fa fa-plus"></i> More info</span>
-                            </div>
-                          </div>
-                          <div class="back-imagia">
-                            <div
-                              class="content-imagia content-back-imagia"
-                              style="color: black"
-                            >
-                              <div>
-                                <h3 class="text-center">Travel Buddy</h3>
-                                <p class="text-center" style="overflow: hidden">
-                                  <span
-                                    style="
-                                      background-color: rgba(255, 255, 255, 0);
-                                    "
-                                  >
-                                    We all know how tough it can be to travel in
-                                    today's current state whether it be an
-                                    unexpected storm or not knowing which gate
-                                    to go to. That's why we came up with Travel
-                                    Buddy. An all-in-one application that allows
-                                    you, the traveler, access to all the
-                                    information you need to make it to your
-                                    final destination. We want traveling to be a
-                                    fun experience so come join us at Travel
-                                    Buddy.</span
-                                  ><br /><br />
-                                </p>
-                              </div>
-                            </div>
-                            <div class="footer-imagia">
-                              <div class="social-imagia text-center">
-                                <a href="#"><i class="fa fa-github"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </div>
-           
-          </div>
-          <div>
-            <a
-              class="carousel-control-prev"
-              href="#carousel-2"
-              role="button"
-              data-bs-slide="prev"
-              ><span class="carousel-control-prev-icon"></span
-              ><span class="visually-hidden">Previous</span></a
-            ><a
-              class="carousel-control-next"
-              href="#carousel-2"
-              role="button"
-              data-bs-slide="next"
-              ><span class="carousel-control-next-icon"></span
-              ><span class="visually-hidden">Next</span></a
-            >
-          </div>
-          <ol
-            class="carousel-indicators"
-            data-aos="fade-up"
-            data-aos-duration="2700"
-            data-aos-offset="0"
-            data-aos-delay="450"
-          >
-            <li
-              data-bs-target="#carousel-2"
-              data-bs-slide-to="0"
-              class="active"
-            ></li>
-            <li data-bs-target="#carousel-2" data-bs-slide-to="1"></li>
-            
-          </ol>
-        </div>
-        <a
-          class="btn btn-link btn-circle"
-          role="button"
-          data-aos="fade-up"
-          data-aos-duration="2700"
-          data-aos-offset="0"
-          data-aos-delay="450"
-          href="#about"
-          ><i
-            class="fa fa-angle-double-down animated"
-            data-aos="fade-up"
-            data-aos-duration="2700"
-            data-aos-offset="0"
-            data-aos-delay="450"
-          ></i
-        ></a>
-      </div>
-    </header>
-    <section
-      class="text-center content-section"
-      id="about"
-      style="padding: 0px 0px; height: 689.396px;"
-    >
-      <div
-        class="container"
-        data-aos="fade-right"
-        data-aos-duration="2700"
-        data-aos-offset="400px"
-        data-aos-delay="450"
-        style="transform: translate(-275px) translateY(93px)"
-      >
-        <div
-          class="row"
-          data-aos="fade-right"
-          data-aos-duration="2000"
-          style="
-            transform: translate(0px) translateZ(619px);
-            margin: 0px;
-            height: 540.396px;
-          "
-        >
-          <div class="col-lg-8 mx-auto" style="margin-left: 37.5%;">
-            <h2>About me</h2>
-            <p class="lead" style="height: 100px; margin: 41">
-              <span style="color: rgb(209, 213, 219)"
-                >My name is Jonathan Spircoff. I am a passionate web developer
-                with a strong background in coding. I completed a bootcamp at
-                the University of Central Florida and have experience working
-                with a variety of frontend and backend technologies such as
-                HTML, CSS, JavaScript, React, Node.js and Express.</span
-              ><br /><br />
-            </p>
-            <p class="lead" style="height: 100px; margin: 34px">
-              <span style="color: rgb(209, 213, 219)"
-                >As a family man with a wife and 3 kids, I am dedicated to
-                creating interactive and engaging websites that are not only
-                visually appealing but also functional and
-                user-friendly.Currently, I am expanding my skills by
-                learning</span
-              ><br /><br />
-            </p>
-            <p class="lead" style="height: 100px; margin: 0">
-              <span style="color: rgb(209, 213, 219)"
-                >Currently, I am expanding my skills by learning python to
-                diversify my capabilities in the web development field and
-                always seeking new challenges and opportunities for
-                growth.</span
-              ><br /><br />
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      class="text-center d-flex justify-content-between content-section"
-      id="about-1"
-      style="height: 747.67px; padding: 0px 250px; background-image: url(assets/img/pexels-eberhard-grossgasteiger-776390.jpg);     object-fit: cover;
-      background-position-y: bottom;"
-    >
-      <div
-        data-aos="fade-left"
-        data-aos-duration="2000"
-        class="rig-row"
-        style="
-          width: 412.83px;
-          height: 560.812px;
-          transform: translate(78px) translateY(78px);
-        "
-      >
-        <!--Comment-->
-        <div class="rig-column">
-          <img
-            src="assets/img/jpeg-imag%20(1).jpg"
-            width="93"
-            height="133"
-          /><img src="assets/img/IMG_2337.jpg" width="93" height="84" /><img
-            src="assets/img/IMG_9969.jpg"
-            width="93"
-            height="73"
-          /><img src="assets/img/IMG_3457(1).jpg" /><img
-            src="assets/img/IMG_2247.jpeg"
-            width="93"
-            height="130"
-          />
-        </div>
-        <div class="rig-column">
-          <img src="assets/img/IMG_2226.jpg" width="93" height="89" /><img
-            src="assets/img/IMG_2286(2).jpg"
-            width="93"
-            height="124"
-          /><img src="assets/img/IMG_4825(2).jpg" /><img
-            src="assets/img/FullSizeR(6).jpg"
-            width="93"
-            height="129"
-          /><img src="assets/img/IMG_4901.jpg" />
-        </div>
-        <div class="rig-column">
-          <img src="assets/img/IMG_2749.jpg" /><img
-            src="assets/img/IMG_3197(2).jpg"
-          /><img src="assets/img/Resized_Resized_20221002_140622(0).jpeg" /><img
-            src="assets/img/IMG_8899.jpg"
-            width="93"
-            height="83"
-          /><img src="assets/img/IMG_2282(2).jpg" width="93" height="84" /><img
-            src="assets/img/IMG_2233(1).jpg"
-            width="93"
-            height="84"
-          />
-        </div>
-        <div class="rig-column">
-          <img src="assets/img/IMG_3456(1).jpg" width="93" height="88" /><img
-            src="assets/img/Resized_Resized_20221002_140447(0).jpeg"
-            width="93"
-            height="89"
-          /><img src="assets/img/IMG_5811(2).jpg" /><img
-            src="assets/img/IMG_0039.jpg"
-            width="93"
-            height="105"
-          /><img src="assets/img/IMG_2218.jpg" width="93" height="114" />
-        </div>
-      </div>
-      <div>
-        <!--Responsive Image Grid Block-->
-        <!--Photo Grid-->
-        <div>
-          <!--Comment-->
-        </div>
-      </div>
-      <section
-        data-aos="fade-left"
-        data-aos-duration="2000"
-        id="contact-1"
-        style="
-          padding: 40px;
-          padding-right: 5px;
-          padding-left: 4px;
-          width: 685.396px;
-        "
-      >
-        <div class="container">
-          <form
-            id="contact-form"
-            style="padding: 15px"
-            action="javascript:void();"
-            method="post"
-          >
-            <div
-              class="row"
-              style="margin-left: 0px; margin-right: 0px; padding: 10px"
-            >
-              <div
-                class="col-md-6"
-                style="padding-left: 20px; padding-right: 20px"
-              >
-                <fieldset></fieldset>
-                <legend><i class="fa fa-info"></i>&nbsp;Information</legend>
-                <p></p>
-                <div class="table-responsive">
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <td><i class="fa fa-envelope"></i></td>
-                        <td>spircoffj@gmail.com</td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td><i class="fa fa-map-marker"></i></td>
-                        <td>Jensen Beach, Florida</td>
-                      </tr>
-                      <tr>
-                        <td><i class="fa fa-phone"></i></td>
-                        <td>772-342-3272</td>
-                      </tr>
-                      <tr></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div
-                class="col-12 col-md-6"
-                id="message"
-                style="padding-right: 20px; padding-left: 20px"
-              >
-                <fieldset>
-                  <legend>
-                    <i class="fa fa-envelope"></i>&nbsp;Contact me
-                  </legend>
-                </fieldset>
-
-                <div class="has-feedback form-group mb-3">
-                  <label class="form-label" for="from_name">Name</label
-                  ><input
-                    class="form-control"
-                    type="text"
-                    id="from_name"
-                    tabindex="-1"
-                    name="contact_number"
-                    required=""
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div class="has-feedback form-group mb-3">
-                  <label class="form-label" for="from_email">Email</label
-                  ><input
-                    class="form-control"
-                    type="email"
-                    id="from_email"
-                    name="user_email"
-                    required=""
-                    placeholder="Enter your email address"
-                  />
-                </div>
-                <div class="form-group mb-3">
-                  <label class="form-label" for="comments">Message</label
-                  ><textarea
-                    class="form-control"
-                    id="comments"
-                    name="message"
-                    placeholder="Enter your message"
-                    rows="5"
-                  ></textarea>
-                </div>
-                <div class="form-group mb-3">
-                  <button
-                    class="btn btn-primary active d-block w-100"
-                    style="background-color: #303641"
-                    type="submit"
-                    value="Send"
-                  >
-                    Send <i class="fa fa-chevron-circle-right"></i>
-                  </button>
-                </div>
-                <hr />
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
-    </section>
-    <div class="map-clean"></div>
-    <footer style="height: 137.854px; padding: 0px 0px">
-      <div class="col-lg-8 text-center mx-auto">
-        <h2></h2>
-        <p
-          class="text-center"
-          data-aos="zoom-in"
-          data-aos-duration="1000"
-          data-aos-offset="0"
-        >
-          <br /><span style="background-color: rgba(68, 70, 84, 0)"
-            >Thanks for visiting! Follow me on social media and feel free to
-            leave me feedback.</span
-          ><br /><br />
-        </p>
-        <ul
-          class="list-inline text-center banner-social-buttons"
-          data-aos="zoom-in"
-          data-aos-duration="1000"
-          data-aos-offset="0"
-          style="margin: 0px 0px 16px"
-        >
-        <li class="list-inline-item">
-          <a 
-            class="btn btn-success btn-lg btn-default"
-            href="https://www.linkedin.com/in/jonathanspircoff/"
-            style="
-              --bs-success: #12078f;
-              --bs-success-rgb: 18, 7, 143;
-              --bs-primary: z;
-              --bs-body-color: var(--bs-light);
-            "
-          >
-            <i class="fa fa-linkedin"></i>
-            <span class="network-name">&nbsp; Linkedin</span>
-          </a>
-          &nbsp;
-          <li class="list-inline-item">
-            <a 
-              class="btn btn-success btn-lg btn-default"
-              href="https://www.instagram.com/jon.spircoff7/"
-              style="
-                --bs-success: #12078f;
-                --bs-success-rgb: 18, 7, 143;
-                --bs-primary: z;
-                --bs-body-color: var(--bs-light);
-              "
-            >
-              <i class="fa fa-instagram"></i>
-              <span class="network-name">&nbsp; Instagram</span>
-            </a>
-            &nbsp;
-          </li>
-          <li class="list-inline-item">
-            <a 
-              class="btn btn-success btn-lg btn-default"
-              href="https://github.com/JonSpircoff7"
-              style="
-                --bs-success: #12078f;
-                --bs-success-rgb: 18, 7, 143;
-                --bs-primary: z;
-                --bs-body-color: var(--bs-light);
-              "
-            >
-              <i class="fa fa-github"></i>
-              <span class="network-name">&nbsp; Github</span>
-            </a>
-            &nbsp;
-          </li>
         </ul>
-      </div>
-    </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.min.js"></script>
-    <script src="assets/js/bs-init.js"></script>
-    <script src="assets/js/grayscale.js"></script>
-  </body>
+    </nav>
+    <div id="projects">    <div class="wrapper">
+        <svg class="svg" style="position: absolute;
+        width: 474px;
+        top: 20vh;
+        left: 10vw;" viewBox="0 0 900 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z" fill="#D9D9D9"/>
+            <mask id="mask0_0_1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="10">
+            <path d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_0_1)">
+            <rect class="mask" y="-49" height="99" fill="black"/>
+            </g>
+            </svg>
+        <div class="container scrollx">
+           
+            <section id="home" class="sec1 pin">
+                <span class="anim">Hey there!</span>
+                <div class="col">
+                    <p>My name is Jonathan Spircoff. I am a technology enthusiast with a passion for constantly learning and exploring new technologies.</p>
+                    <p>I am constantly striving to expand my knowledge and skillset, and I am excited to bring my passion and expertise to new projects and opportunities.
+                    </p> 
+                </div>
+            </section>
+            <section id="aboutme" class="sec2 pin">
+                <span class="anim">About me</span>
+                <div class="col anim">
+                    <p>As a full stack JavaScript developer, I have a passion for creating user-friendly and immersive experiences through the use of technologies such as AI, Three.js, GSAP, and Python. </p>
+                    <p>My goal is to continuously grow my knowledge and expertise in these areas to deliver outstanding results for my clients. I approach each project with confidence, humility, and a strong work ethic, always striving for excellence in everything I do.</p>
+                </div>
+            </section>
+            <section class="sec3 pin">
+                <span class="anim">Projects</span>
+                <div class="col anim">
+                    <div class="flex-container">
+                        <div class="flex-item">
+                          <img src="image1.jpg" alt="Image 1">
+                        </div>
+                        <div class="flex-item">
+                          <img src="image2.jpg" alt="Image 2">
+                        </div>
+                        <div class="flex-item">
+                          <img src="image3.jpg" alt="Image 3">
+                        </div>
+                        <div class="flex-item">
+                          <img src="image4.jpg" alt="Image 4">
+                        </div>
+                      </div>
+                      
+                </div>
+            </section>
+            <section class="sec4 pin">
+                <span class="anim">Lets connect!</span>
+
+                <div class="col anim">
+                    <p>Ready to take the next step and connect with me? Fill out the contact form below to get in touch.</p>
+                </div>
+            </section>
+        </div>
+        <div class="page2">
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <input type="submit" value="Submit">
+              </form>
+              
+              
+              
+            <div class="footer">
+        <h3>Connect with me on social media</h3>
+        <ul>
+            <div class="social">
+                <img src="./assets/icons8-linkedin-16.png"/>
+                <li><a href="https://www.linkedin.com/in/jonathanspircoff/">LinkedIn</a></li>
+            </div>
+            <div class="social">
+                <img src="./assets/icons8-github-16.png"/>
+                <li><a href="https://github.com/JonSpircoff7">GitHub</a></li>
+            </div>
+            <div class="social">
+                <img src="./assets/icons8-instagram-24.png"/>
+                <li><a href="https://instagram.com/jon.spircoff7">Instagram</a></li>
+            </div>
+        </ul>
+    </div>
+        </div>
+    <div id="profilepic">
+        <img src="./assets/thumbnail-removebg-preview.png" alt="Jonathan Spircoff profile picture">     
+    </div>
+    
+    </main>
+        <div id="bkgcontainer">
+        </div>
+    <!-- Intro Page -->
+     <section class="loading">    
+        <span class="welcome">W</span>
+        <span class="welcome">E</span>
+        <span class="welcome">L</span>
+        <span class="welcome">C</span>
+        <span class="welcome">O</span>
+        <span class="welcome">M</span>
+        <span class="welcome">E</span>
+        <span class="welcome">.</span>
+        <span class="welcome">.</span>
+        <span class="welcome">.</span>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="./index.js"></script>
+</body>
 </html>
