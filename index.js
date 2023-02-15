@@ -1,3 +1,25 @@
+const burger = document.querySelector('.burger');
+const menu = document.querySelector('.menu');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('change');
+  menu.classList.toggle('show');
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    menu.classList.remove('show');
+    burger.classList.remove('change');
+  }
+});
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  section.scrollIntoView({ behavior: "smooth" });
+}
+
+
+
 // document.getElementById("loadingpage").style.overflow = "hidden";
 
 // const pages = document.querySelectorAll(".page");

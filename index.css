@@ -363,29 +363,117 @@ input, textarea {
     margin: 20px 0;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 0px) and (max-width: 425px) {
+    *{
+        border-radius: 5px;
+    }
     #main{height: fit-content;}
     body{
         padding: 0px 10px;
     }
-    nav{
-        position: sticky;
-        top: 0;
-    }
-    nav ul{
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #fff;
+      }
+      
+      nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+      }
+      
+      nav ul li {
         display: none;
-    }
-    .burger{
-        display:block;
-        padding: 5px;
-        border: 1px solid black;
-    }
-    .line1,.line2,.line3{
-        background-color: black;
-        height: 3px;
+        margin: 0 1rem;
+      }
+      
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      
+      .burger {
+        display: block;
+        cursor: pointer;
+        z-index: 999;
+        position: relative;
+      }
+      
+      .burger .line1, .burger .line2, .burger .line3 {
         width: 25px;
-        margin: 4px
-    }
+        height: 3px;
+        background-color: #333;
+        margin: 5px;
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      .change .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .change .line2 {
+        opacity: 0;
+      }
+      
+      .change .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+      
+      .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 50vw;
+        max-width: 500px;
+        background-color: #fff;
+        border: 1px solid #333;
+        padding: 1rem;
+        z-index: -1;
+      }
+    
+      .menu ul {
+        list-style: none;
+        margin: 55px 0px;
+        padding: 0;
+        align-items: end;
+      }
+      
+      .menu ul li {
+        display: block;
+        margin-bottom: 3rem;
+      }
+      
+      .menu ul li a {
+        font-size: larger;
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+
+        .burger {
+          display: block;
+        }
+        .menu {
+          display: none;
+        }
+        nav {
+          flex-direction: column;
+        }
+        .menu.show {
+          display: block;
+        }
+        .menu ul {
+          display: flex;
+          flex-direction: column;}
+         
     .profilepic img{
         width: 100%;
     }
@@ -473,6 +561,9 @@ input, textarea {
         height: 30vh; width: 100%; margin: 0; }
   }
 @media only screen and (min-width: 426px)and (max-width: 700px){
+    *{
+        border-radius: 5px;
+    }
     body{
             padding: 0px 10px;
     }
@@ -487,6 +578,7 @@ input, textarea {
     }
     nav{
         position: sticky;
+        border-radius: 0;
     }
     nav ul li{
         display: none;
@@ -494,17 +586,109 @@ input, textarea {
     #main{
         height: fit-content;
     }
-    .burger{
-        display:block;
-        padding: 5px;
-        border: 1px solid black;
-    }
-    .line1,.line2,.line3{
-        background-color: black;
-        height: 3px;
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: #fff;
+      }
+      
+      nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+      }
+      
+      nav ul li {
+        margin: 0 1rem;
+      }
+      
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      
+      .burger {
+        display: block;
+        cursor: pointer;
+        z-index: 999;
+        position: relative;
+      }
+      
+      .burger .line1, .burger .line2, .burger .line3 {
         width: 25px;
-        margin: 4px
-    }
+        height: 3px;
+        background-color: #333;
+        margin: 5px;
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      .change .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .change .line2 {
+        opacity: 0;
+      }
+      
+      .change .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+      
+      .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 50vw;
+        max-width: 500px;
+        background-color: #fff;
+        border: 1px solid #333;
+        padding: 1rem;
+        z-index: -1;
+      }
+    
+      .menu ul {
+        list-style: none;
+        margin: 55px 0px;
+        padding: 0;
+        align-items: end;
+      }
+      
+      .menu ul li {
+        display: block;
+        margin-bottom: 3rem;
+      }
+      
+      .menu ul li a {
+        font-size: larger;
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+
+        .burger {
+          display: block;
+        }
+        .menu {
+          display: none;
+        }
+        nav {
+          flex-direction: column;
+        }
+        .menu.show {
+          display: block;
+        }
+        .menu ul {
+          display: flex;
+          flex-direction: column;}
+         
+      
     .main{
         padding: 40px 0px;
     }
@@ -557,8 +741,7 @@ input, textarea {
     }
     .contact-content{
         width: -webkit-fill-available;
-        height: -webkit-fill-available;
-    }
+        height: fit-content    }
     .contact-content h2{
         margin: 4%
     }
@@ -589,6 +772,9 @@ input, textarea {
         height: fit-content;}
     div.profilepic {margin:0}
     nav{position: sticky;}
+    .menu{
+        display: none;
+    }
     .profilepic img {
         width: 250px;
     height: 400px;
@@ -613,6 +799,7 @@ input, textarea {
         background-position: center;
         background-repeat: no-repeat;
         height: fit-content;
+        padding: 5px 5%;
         }
         .about div{
             flex-wrap: wrap;
@@ -636,6 +823,10 @@ input, textarea {
             position: static;
             height: 25rem;
             width: 42%;
+        }
+
+        .contact-content{
+            width: 90%
         }
     
 }
@@ -664,8 +855,27 @@ section.about{
     margin-right: 2%;
 }
 img#img1.small.pic1, img#img2.small.pic2, img#img3.medium.pic1, img#img4.medium.pic2, img#img5.medium.pic3, img#img6.medium.pic4, img#img7.large.pic1, img#img8.large.pic2{
-    width: 5px;
+    width: 125px;
+    height: 125px;
 }
+}
+@media only screen and (min-width: 900px){
+    main{
+        height: 100%
+    }
+    .contact-content{
+        width: 60%
+    }
+    img#img1.small.pic1, img#img2.small.pic2, img#img3.medium.pic1, img#img4.medium.pic2, img#img5.medium.pic3, img#img6.medium.pic4, img#img7.large.pic1, img#img8.large.pic2 {
+        width: 125px;
+        height: 125px;
+    }
+    .about div{
+        margin: 0
+    }
+    section#portfolio, section#about.pageflex.about{
+        height: 100vh;
+    }
 }
 
 
